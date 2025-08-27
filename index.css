@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* variavéis de cores que serão utilizadas ao longo do projeto */
+:root {
+    --background-color-dark: #191919;
+    --background-color-light: #E1E1E1;
+    --text-color-dark: #FFFFFF;
+    --text-color-light: #000000;
+    --primary-color: #C54B8C;
+
+}
+
+body {
+    background-color: var(--background-color-dark);
+    height: auto;
+    width: 100%;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    display: flex;
+    height: 10vh;
+    width: 100%;
+}
+
+.name {
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    font-size: 22px;
+}
+
+
+nav ul {
+    text-decoration: none;
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links {
+    color: var(--text-color-dark);
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links:hover {
+    color: var(--primary-color);
+    transition: 0.4s;
+    font-size: 15px;
+}
+
+.container-icons {
+    display: flex;
+    gap: 20px;
+}
+
+i {
+    color: var(--text-color-dark);
+    cursor: pointer;
+    font-size: 22px;
+}
+
+i:hover {
+    color: var(--primary-color);
+    transition: 0.4s;
+    font-size: 23px;
+}
