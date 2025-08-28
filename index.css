@@ -10,21 +10,25 @@
 
 /* variavéis de cores que serão utilizadas ao longo do projeto */
 :root {
-    --background-color-dark: #191919;
+    --secondary-bacground-color-dark: #262626;
     --background-color-light: #E1E1E1;
-    --text-color-dark: #FFFFFF;
+    --background-color-dark: #191919;
     --text-color-light: #000000;
+    --text-color-dark: #FFFFFF;
     --primary-color: #C54B8C;
 
 }
 
 body {
     background-color: var(--background-color-dark);
+    display: flex;
     height: auto;
+    flex: 1;
     width: 100%;
 }
 
 header {
+    background-color: var(--secondary-bacground-color-dark);
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
@@ -76,4 +80,58 @@ i:hover {
     color: var(--primary-color);
     transition: 0.4s;
     font-size: 23px;
+}
+
+main {
+    flex-direction: column;
+    margin-top: 10vh;
+    display: flex;
+}
+ 
+.sidebar {
+    background-color: var(--secondary-bacground-color-dark);
+    color: var(--text-color-dark);
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    padding: 30px;
+    height: 100vh;
+    width: 20%;
+    gap: 20px;
+}
+
+.profile-photo {
+    height: 25vh;
+    width: 12vw;
+}
+
+.sidebar-name{
+    font-size: 22px;;
+}
+
+.sidebar-profession{
+    font-size: 13px;
+}
+
+.sidebar-contact{
+    flex-direction: column;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar-icons{
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.sidebar-icons a:hover{
+    color: var(--primary-color);
+}
+
+.sidebar-icons a{
+    color: var(--text-color-dark);
+    text-decoration: none;
 }
