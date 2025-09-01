@@ -3,9 +3,9 @@
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
-    overflow-x: hidden;
     padding: 0;
     margin: 0;
+    top: 0;
 }
 
 /* variavéis de cores que serão utilizadas ao longo do projeto */
@@ -21,9 +21,8 @@
 
 body {
     background-color: var(--background-color-dark);
-    display: flex;
+    overflow-x: hidden;
     height: auto;
-    flex: 1;
     width: 100%;
 }
 
@@ -35,6 +34,7 @@ header {
     position: fixed;
     display: flex;
     height: 10vh;
+    z-index: 999;
     width: 100%;
 }
 
@@ -48,6 +48,7 @@ header {
 nav ul {
     text-decoration: none;
     flex-direction: row;
+     list-style: none;
     display: flex;
     gap: 20px;
 }
@@ -76,7 +77,7 @@ i {
     font-size: 22px;
 }
 
-i:hover {
+.container-icons i:hover {
     color: var(--primary-color);
     transition: 0.4s;
     font-size: 23px;
@@ -87,7 +88,7 @@ main {
     margin-top: 10vh;
     display: flex;
 }
- 
+
 .sidebar {
     background-color: var(--secondary-bacground-color-dark);
     color: var(--text-color-dark);
@@ -98,40 +99,296 @@ main {
     padding: 30px;
     height: 100vh;
     width: 20%;
+    top: 10vh;
     gap: 20px;
 }
 
 .profile-photo {
-    height: 25vh;
+    height: 26vh;
     width: 12vw;
 }
 
-.sidebar-name{
-    font-size: 22px;;
+.sidebar-name {
+    font-size: 22px;
+    ;
 }
 
-.sidebar-profession{
+.sidebar-profession {
     font-size: 13px;
 }
 
-.sidebar-contact{
+.sidebar-contact {
     flex-direction: column;
     margin-top: 30px;
     display: flex;
     gap: 20px;
 }
 
-.sidebar-icons{
+.sidebar-icons {
     align-items: center;
     display: flex;
     gap: 15px;
 }
 
-.sidebar-icons a:hover{
+.sidebar-icons a:hover {
     color: var(--primary-color);
 }
 
-.sidebar-icons a{
+.sidebar-icons a {
     color: var(--text-color-dark);
     text-decoration: none;
+}
+
+.main-content {
+    flex-direction: column;
+    margin-left: 20%;
+    display: flex;
+    height: auto;
+    width: 80%;
+}
+
+.main-section {
+    padding: 30px 150px;
+    min-height: 80vh;
+    display: flex;
+    height: auto;
+    width: 100%;
+    gap: 30px;
+}
+
+#section-home {
+    align-items: center;
+}
+
+.text-animation {
+    color: var(--text-color-dark);
+    letter-spacing: 4px;
+    font-size: 45px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    color: var(--primary-color);
+    letter-spacing: 4px;
+    content: '';
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    background-color: var(--background-color-dark);
+    animation: cursor 1s infinite, typer 20s steps(19) infinite;
+    border-left: 2px solid var(--primary-color);
+    position: absolute;
+    /* width: calc(100% + 30px); */
+    right: -15px;
+    height: 100%;
+    content: '';
+}
+
+@keyframes typer {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 30px);
+    }
+}
+
+@keyframes words {
+
+    0%,
+    33% {
+        content: "Gabriela Viana";
+    }
+
+    34%,
+    63% {
+        content: "Software Engineer";
+    }
+
+    64%,
+    100% {
+        content: "Frontend Developer";
+    }
+}
+
+#section-about,
+#section-experience {
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.title-section {
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+}
+
+.timeline {
+    position: relative;
+    margin: 30px 100px;
+    width: 100%;
+}
+
+.timeline::after {
+    background-color: var(--primary-color);
+    position: absolute;
+    margin-left: -3px;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    width: 4px;
+    left: 40%;
+    top: 0;
+    animation: ariseLine 6s linear forwards;
+}
+
+@keyframes ariseLine {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+    
+}
+
+.container {
+    animation: moveDown 1s linear forwards;
+    padding: 10px 30px;
+    position: relative;
+    opacity: 0;
+    width: 40%;
+}
+
+@keyframes moveDown{
+    0%{
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+} 
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+
+.text-box {
+    background-color: var(--background-color-light);
+    padding: 20px 30px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.text-box h3 {
+    color: var(--primary-color);
+}
+
+.place{
+    color: var(--secondary-bacground-color-dark);
+    display: inline-block;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 8px 0;
+    opacity: 0.8;
+}
+
+.date {
+    color: var(--secondary-bacground-color-dark);
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.left-container {
+    left: 0;
+}
+
+.right-container {
+    left: 40%;
+}
+
+.container-icon {
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    z-index: 10;
+    top: 32px;
+}
+
+.right-container .container-icon {
+    left: -20px;
+}
+
+.left-arrow{
+    border-left: 10px solid var(--background-color-light);
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    position: absolute;
+    right: -8px;
+    z-index: 1;
+    height: 0;
+    top: 30px;
+    width: 0;
+}
+
+.right-arrow{
+    border-right: 10px solid var(--background-color-light);
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    position: absolute;
+    left: -8px;
+    z-index: 1;
+    height: 0;
+    top: 30px;
+    width: 0;
 }
