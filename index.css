@@ -537,3 +537,10 @@ footer{
     height: 10vh;
     width: 80%;
 }
+
+@media (max-width: 768px){
+    .sidebar{
+        display: none;
+    }
+    
+}
