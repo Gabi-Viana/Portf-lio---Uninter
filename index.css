@@ -13,6 +13,7 @@
     --secondary-bacground-color-dark: #262626;
     --background-color-light: #E1E1E1;
     --background-color-dark: #191919;
+    --secundary-text-color: #909090;
     --text-color-light: #000000;
     --text-color-dark: #FFFFFF;
     --primary-color: #C54B8C;
@@ -179,7 +180,7 @@ main {
 
 .text-animation span::after {
     background-color: var(--background-color-dark);
-    animation: cursor 1s infinite, typer 20s steps(19) infinite;
+    animation: cursor .9s infinite, typer 20s steps(15) infinite;
     border-left: 2px solid var(--primary-color);
     position: absolute;
     right: -15px;
@@ -218,18 +219,28 @@ main {
 @keyframes words {
 
     0%,
-    33% {
+    20% {
         content: "Gabriela Viana";
     }
 
-    34%,
-    63% {
+    21%,
+    40% {
         content: "Software Engineer";
     }
 
-    64%,
-    100% {
+    41%,
+    60% {
         content: "Frontend Developer";
+    }
+
+    61%,
+    80% {
+        content: "Web Developer";
+    }
+
+    81%,
+    100% {
+        content: "Tech Enthusiast";
     }
 }
 
@@ -430,7 +441,7 @@ main {
 }
 
 .forms-contact input, textarea{
-    border: 2px solid #909090;
+    border: 2px solid var(--secundary-text-color);
     color: var(--text-color-dark);
     background-color: transparent;
     border-radius: 5px;
@@ -451,10 +462,10 @@ main {
 }
 
 .forms-contact button{
-    border: 2px solid #909090;
+    border: 2px solid var(--secundary-text-color);
+    color: var(--secundary-text-color);
     background-color: transparent;
     border-radius: 5px;
-    color: #909090;
     height: 6vh;
     width: 10vw;
 }
@@ -470,6 +481,51 @@ main {
     display: flex;
     width: 100%;
 }
+
+.projects-section{
+    flex-direction: column;
+    padding: 30px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.container-projects{
+     border: 3px solid var(--secondary-bacground-color-dark);
+     color: var(--secundary-text-color);
+     padding: 30px;
+     height: auto;
+     width: 100%;
+}
+
+
+.container-projects a{
+    text-decoration: none;
+}
+
+.container-projects button{
+    border: 2px solid var(--secundary-text-color);
+    color: var(--secundary-text-color);
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 6vh;
+    width: 8vw;
+}
+
+
+.container-projects button:hover{
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.container-buttons{
+    justify-content: flex-end;
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
 
 footer{
     color: var(--text-color-dark);
